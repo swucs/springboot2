@@ -30,6 +30,16 @@ deploy:
     local_dir: deploy #before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY #travis 환경변수
+    secret_access_key: $AWS_SECRET_KEY #travis 환경변수
+    bucket: swucs-freelec-springboot-build  #S3버킷
+    key: freelec-springboot2-webservice.zip #빌드파일을 압축해서 전달
+    bundle_type: zip
+    application: freelec-springboot2-webservice
+    region: ap-northeast-2
+    wait-until-deployed: true
+
 
 
 #CI 실행완료시 메일로 알람
