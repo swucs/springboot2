@@ -22,6 +22,6 @@ public class IndexControllerTest {
 
         System.out.println("body : " + body);
 
-        assertThat(body).contains("Spring Boot");
+        assertThat(body).contains("스프링부트 웹서비스");
     }
 }
